@@ -1,0 +1,21 @@
+<div fxLayout="column" class="mat-body-2">
+
+  <div fxLayout="row" class="mat-title">{{confirmationMessage}}</div>
+
+  <div fxLayout="row" fxLayoutAlign="space-between center" style="margin-top: 30px">
+    <button
+      style="width: 120px;"
+      mat-raised-button
+      color="primary"
+      (click)="dialogAccepted(false)">{{cancel}}
+
+    </button>
+    <button
+      style="width: 120px;"
+      mat-button
+      color="primary"
+      (click)="dialogAccepted(true)">{{ok}}
+    </button>
+  </div>
+
+</div>

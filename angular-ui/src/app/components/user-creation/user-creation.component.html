@@ -1,0 +1,42 @@
+<div fxLayout="column" class="mat-body-2">
+  <div class="mat-headline">
+    Create user
+  </div>
+
+  <div fxLayout="column">
+    <mat-form-field class="example-full-width">
+      <input matInput type="text" placeholder="Name" required [(ngModel)]="user.username">
+      <mat-error *ngIf="user.username.length === 0">
+        Username is required !
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input matInput type="text" placeholder="Email" required [(ngModel)]="user.email">
+      <mat-error *ngIf="user.email.length === 0">
+        Email is required !
+      </mat-error>
+    </mat-form-field>
+
+  </div>
+
+  <div fxLayout="row" fxLayoutAlign="space-between center">
+    <button
+      color="primary"
+      mat-button
+      (click)="cancel()"
+    >
+      Cancel
+    </button>
+
+    <button
+      mat-raised-button
+      color="primary"
+      [disabled]="user.username.length === 0 || user.email.length === 0"
+      (click)="createUser()
+"
+    >
+      Create user
+    </button>
+  </div>
+
+</div>

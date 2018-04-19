@@ -1,0 +1,44 @@
+<div class="example-container mat-elevation-z8">
+  <mat-table #table [dataSource]="dataSource">
+
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef> No.</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{getPositionInArray(element)}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="username">
+      <mat-header-cell *matHeaderCellDef> Name</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.username}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="email">
+      <mat-header-cell *matHeaderCellDef> Email</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.email}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <mat-header-cell *matHeaderCellDef>
+        <div fxLayout="row" fxLayoutAlign="center center">
+          Actions
+        </div>
+      </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <div fxLayout="row" fxLayoutAlign="space-around center">
+          <button mat-icon-button (click)="editUser(element)">
+            <mat-icon aria-label="Edit user">mode_edit</mat-icon>
+          </button>
+
+          <button mat-icon-button (click)="deleteUser(element)">
+            <mat-icon aria-label="Remove user">delete</mat-icon>
+          </button>
+
+
+        </div>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
+  </mat-table>
+</div>

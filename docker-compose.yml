@@ -1,0 +1,23 @@
+version: "3.5"
+services:
+  frontend:
+    container_name: angular-ui
+    image: angular-ui:1.0-SNAPSHOT
+    networks:
+      - default
+    links:
+      - backend
+    ports:
+      - 80:80
+  backend:
+    container_name: rest-backend
+    image: spring-backend:1.0-SNAPSHOT
+    environment:
+      - spring.profiles.active=docker
+
+    networks:
+      - default
+
+networks:
+  default:
+    name: spring-default
