@@ -20,7 +20,7 @@
         <java.version>9</java.version>
         <spring.version>2.0.1.RELEASE</spring.version>
         <mysql.version>5.1.46</mysql.version>
-        <lombok.version>1.16.20</lombok.version>
+        <lombok.version>1.18.2</lombok.version>
         <h2.version>1.4.197</h2.version>
         <dozer-version>6.2.0</dozer-version>
         <javax-xml-binding-version>2.3.0</javax-xml-binding-version>
@@ -113,11 +113,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.7.0</version>
                 <configuration>
-                    <compilerArgs>
-                        <arg>--add-modules=java.xml.bind</arg>
-                    </compilerArgs>
-                    <source>1.9</source>
-                    <target>1.9</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
                 </configuration>
             </plugin>
 
